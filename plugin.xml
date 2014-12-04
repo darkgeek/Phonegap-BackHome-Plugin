@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="edu.hdu.darkgeek.cordova.backhome" version="0.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>BackHome</name>
+    <description>Start the home activity to send your app to background</description>
+    <js-module name="BackHome" src="www/BackHome.js">
+        <clobbers target="cordova.plugins.BackHome"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="BackHome">
+                <param name="android-package" value="edu.hdu.darkgeek.cordova.backhome.BackHome"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/BackHome.java" target-dir="src/edu/hdu/darkgeek/cordova/backhome/"/>
+    </platform>
+</plugin>
